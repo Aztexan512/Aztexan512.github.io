@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills — Luciano Casillas Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0A3360;
+      --steel-700: #405E7C;
+      --blue-700:  #0077B3;
+      --blue-500:  #4EBEE5;
+      --steel-300: #D1E2E5;
+      --steel-100: #F4F9FA;
+      --white:     #FFFFFF;
+      --black:     #2D2D2D;
+      --gray-700:  #707070;
+      --green-700: #08CAA9;
+      --orange:    #FF8A39;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
+
+    nav {
+      background: var(--navy); padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .nav-brand { color: var(--white); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--steel-300); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-500); }
+
+    .page-hero {
+      background: var(--navy); color: var(--white);
+      text-align: center; padding: 3.5rem 2rem 3rem;
+    }
+    .page-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--steel-300); font-size: 0.97rem; }
+
+    main { max-width: 1060px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+
+    /* CATEGORY LABEL */
+    .cat-label {
+      font-size: 0.74rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.13em;
+      color: var(--blue-700); margin-bottom: 0.4rem;
+    }
+    .cat-title {
+      font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem;
+    }
+    .cat-divider {
+      height: 3px; width: 36px; border-radius: 2px;
+      background: var(--blue-500); margin-bottom: 1.5rem;
+    }
+
+    /* SKILLS SECTION */
+    .skills-section { margin-bottom: 3.5rem; }
+
+    /* CARD GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--steel-100);
+      border: 1px solid var(--steel-300);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .skill-card:hover { box-shadow: 0 6px 20px rgba(0,119,179,0.11); transform: translateY(-2px); }
+
+    .skill-card-header {
+      display: flex; align-items: center; gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    .skill-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .icon-blue   { background: rgba(0,119,179,0.12); }
+    .icon-green  { background: rgba(8,202,169,0.12); }
+    .icon-orange { background: rgba(255,138,57,0.12); }
+    .icon-navy   { background: rgba(10,51,96,0.1); }
+
+    .skill-card h3 { font-size: 0.97rem; font-weight: 700; color: var(--navy); }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      font-size: 0.8rem; font-weight: 500;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--steel-300);
+      color: var(--black);
+    }
+    .tag-primary {
+      background: var(--blue-700);
+      border-color: var(--blue-700);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* DOMAIN EXPERTISE */
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .domain-card {
+      background: var(--steel-100);
+      border: 1px solid var(--steel-300);
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem;
+    }
+    .domain-card-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+    .domain-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .domain-badge {
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.18rem 0.55rem; border-radius: 20px;
+    }
+    .badge-primary  { background: rgba(0,119,179,0.12); color: var(--blue-700); }
+    .badge-adjacent { background: rgba(255,138,57,0.12); color: var(--orange); }
+    .badge-developing{ background: rgba(8,202,169,0.12); color: var(--green-700); }
+
+    .domain-note { font-size: 0.84rem; color: var(--gray-700); line-height: 1.5; }
+
+    /* INDUSTRIES */
+    .industry-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .industry-pill {
+      font-size: 0.88rem; font-weight: 500;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      background: var(--steel-100);
+      border: 1px solid var(--steel-300);
+      color: var(--black);
+    }
+
+    footer {
+      background: var(--navy); border-top: 1px solid var(--steel-700);
+      text-align: center; padding: 1.25rem;
+      font-size: 0.82rem; color: var(--steel-300);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">Luciano Casillas Jr.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html" class="active">Skills</a></li>
+    <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <h1>Technical Skills</h1>
+  <p>The tools, methods, and platforms I use to turn data into decisions.</p>
+</div>
+
+<main>
+
+  <!-- CORE TECHNICAL SKILLS -->
+  <div class="skills-section">
+    <p class="cat-label">Core Capabilities</p>
+    <h2 class="cat-title">Technical Skills</h2>
+    <div class="cat-divider"></div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-blue">🗄️</div>
+          <h3>Data &amp; Querying</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-primary">SQL</span>
+          <span class="tag tag-primary">Snowflake</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Hadoop</span>
+          <span class="tag">Data Lake</span>
+          <span class="tag">Multi-Source Integration</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-blue">📊</div>
+          <h3>Visualization &amp; BI</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-primary">Tableau</span>
+          <span class="tag tag-primary">Power BI</span>
+          <span class="tag">MicroStrategy</span>
+          <span class="tag">Excel (Advanced)</span>
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">Interactive Dashboards</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-green">📈</div>
+          <h3>Analytics Methods</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-primary">Exploratory Data Analysis</span>
+          <span class="tag">KPI Development</span>
+          <span class="tag">Trend Analysis</span>
+          <span class="tag">Data Modeling</span>
+          <span class="tag">Forecasting</span>
+          <span class="tag">Capacity Planning</span>
+          <span class="tag">Root Cause Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-navy">🐍</div>
+          <h3>Programming</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-primary">Python</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">SHAP</span>
+          <span class="tag">LLM-Based Text Analysis</span>
+          <span class="tag">VBA</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-orange">🔧</div>
+          <h3>Tools &amp; Platforms</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag">GitHub</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Nexidia</span>
+          <span class="tag">Avaya</span>
+          <span class="tag">SharePoint</span>
+          <span class="tag">CRM Systems</span>
+          <span class="tag">Microsoft Access</span>
+          <span class="tag">Microsoft Office Suite</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon icon-green">🤝</div>
+          <h3>Process &amp; Leadership</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-primary">Agile / SCRUM</span>
+          <span class="tag">Stakeholder Engagement</span>
+          <span class="tag">Cross-Functional Collaboration</span>
+          <span class="tag">Requirements Gathering</span>
+          <span class="tag">Process Improvement</span>
+          <span class="tag">Executive Presentation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ANALYTICS DOMAINS -->
+  <div class="skills-section">
+    <p class="cat-label">Where I Work Best</p>
+    <h2 class="cat-title">Analytics Domains</h2>
+    <div class="cat-divider"></div>
+    <div class="domain-grid">
+
+      <div class="domain-card">
+        <div class="domain-card-top">
+          <span class="domain-name">Business Intelligence</span>
+          <span class="domain-badge badge-primary">Primary</span>
+        </div>
+        <p class="domain-note">10+ Tableau dashboards, KPI tracking, executive reporting — strongest fit.</p>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-top">
+          <span class="domain-name">Operations Analytics</span>
+          <span class="domain-badge badge-primary">Primary</span>
+        </div>
+        <p class="domain-note">Call center ops, workflow optimization, SLA compliance across multiple business units.</p>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-top">
+          <span class="domain-name">Product Analytics</span>
+          <span class="domain-badge badge-adjacent">Adjacent</span>
+        </div>
+        <p class="domain-note">Agent performance modeling, EDA, customer interaction trend analysis.</p>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-top">
+          <span class="domain-name">GTM / Revenue Analytics</span>
+          <span class="domain-badge badge-adjacent">Adjacent</span>
+        </div>
+        <p class="domain-note">Inbound sales, retention analytics, customer satisfaction measurement.</p>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-top">
+          <span class="domain-name">Advanced Analytics</span>
+          <span class="domain-badge badge-developing">Developing</span>
+        </div>
+        <p class="domain-note">EDA, predictive modeling (XGBoost, SHAP), propensity scoring, and ML explainability.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INDUSTRY BACKGROUND -->
+  <div class="skills-section">
+    <p class="cat-label">Where I've Applied It</p>
+    <h2 class="cat-title">Industry Background</h2>
+    <div class="cat-divider"></div>
+    <div class="industry-list">
+      <span class="industry-pill">Telecommunications</span>
+      <span class="industry-pill">Healthcare / Managed Care</span>
+      <span class="industry-pill">Insurance</span>
+      <span class="industry-pill">Contact Center Operations</span>
+      <span class="industry-pill">Customer Experience</span>
+    </div>
+  </div>
+
+</main>
+
+<footer>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</footer>
+
+</body>
+</html>

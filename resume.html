@@ -17,132 +17,86 @@
       --white:     #FFFFFF;
       --black:     #2D2D2D;
       --gray-700:  #707070;
-      --gray-300:  #CCCCCC;
       --green-700: #08CAA9;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
 
     nav {
-      background: var(--navy);
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: var(--navy); padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; position: sticky; top: 0; z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
-    .nav-brand { color: var(--white); font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+    .nav-brand { color: var(--white); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--steel-300); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--blue-500); }
 
     .page-hero {
-      background: var(--navy);
-      color: var(--white);
-      text-align: center;
-      padding: 3.5rem 2rem 3rem;
+      background: var(--navy); color: var(--white);
+      text-align: center; padding: 3.5rem 2rem 3rem;
     }
     .page-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
     .page-hero p { color: var(--steel-300); font-size: 0.97rem; margin-bottom: 1.5rem; }
     .btn {
-      display: inline-block;
-      padding: 0.65rem 1.5rem;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
+      display: inline-block; padding: 0.65rem 1.5rem;
+      border-radius: 6px; font-size: 0.93rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s;
     }
     .btn:hover { opacity: 0.85; }
     .btn-primary { background: var(--blue-700); color: var(--white); }
 
     .resume-body { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
 
-    /* SECTION */
     .res-section { margin-bottom: 3rem; }
     .res-section-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
+      font-size: 0.74rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.13em;
       color: var(--blue-700);
       border-bottom: 2px solid var(--steel-300);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.75rem;
+      padding-bottom: 0.5rem; margin-bottom: 1.75rem;
     }
 
-    /* EXPERIENCE TIMELINE */
-    .exp-item { display: flex; gap: 1.25rem; margin-bottom: 2rem; }
-    .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
-    .exp-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--blue-700);
-      flex-shrink: 0;
-    }
+    /* TIMELINE */
+    .exp-item { display: flex; gap: 1.25rem; margin-bottom: 2.25rem; }
+    .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+    .exp-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue-700); flex-shrink: 0; }
     .exp-line { flex: 1; width: 2px; background: var(--steel-300); margin-top: 4px; }
     .exp-content { flex: 1; }
-    .exp-role { font-size: 1.05rem; font-weight: 700; color: var(--navy); }
-    .exp-company {
-      font-size: 0.9rem;
-      color: var(--steel-700);
-      margin-bottom: 0.75rem;
-    }
-    .exp-company span { color: var(--gray-700); font-size: 0.85rem; }
-    .exp-note {
-      font-size: 0.82rem;
-      color: var(--gray-700);
-      font-style: italic;
-      margin-bottom: 0.6rem;
-    }
+    .exp-role { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .exp-company { font-size: 0.88rem; color: var(--steel-700); margin-bottom: 0.7rem; }
+    .exp-company span { color: var(--gray-700); font-size: 0.84rem; }
+    .exp-note { font-size: 0.82rem; color: var(--gray-700); font-style: italic; margin-bottom: 0.55rem; }
     .exp-content ul { padding-left: 1.2rem; }
-    .exp-content li { font-size: 0.92rem; color: var(--black); line-height: 1.6; margin-bottom: 0.4rem; }
+    .exp-content li { font-size: 0.9rem; color: var(--black); line-height: 1.65; margin-bottom: 0.35rem; }
 
     /* SKILLS GRID */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .skill-group h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-    .skill-group p { font-size: 0.88rem; color: var(--black); line-height: 1.55; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1.1rem; }
+    .skill-group h4 { font-size: 0.84rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .skill-group p { font-size: 0.86rem; color: var(--black); line-height: 1.55; }
 
     /* EDUCATION */
-    .edu-item { margin-bottom: 1.25rem; }
-    .edu-degree { font-size: 0.97rem; font-weight: 700; color: var(--navy); }
-    .edu-school { font-size: 0.88rem; color: var(--gray-700); }
+    .edu-item { margin-bottom: 1.1rem; }
+    .edu-degree { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .edu-school { font-size: 0.86rem; color: var(--gray-700); }
 
-    /* CERT */
+    /* CERTS */
     .cert-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+      display: flex; gap: 0.75rem; align-items: flex-start;
       padding: 0.85rem 1rem;
       background: var(--steel-100);
       border: 1px solid var(--steel-300);
       border-left: 4px solid var(--green-700);
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
+      border-radius: 6px; margin-bottom: 0.75rem;
     }
-    .cert-item .cert-name { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
-    .cert-item .cert-org { font-size: 0.83rem; color: var(--gray-700); }
+    .cert-name { font-size: 0.93rem; font-weight: 600; color: var(--navy); }
+    .cert-org  { font-size: 0.82rem; color: var(--gray-700); }
 
     footer {
-      background: var(--navy);
-      border-top: 1px solid var(--steel-700);
-      text-align: center;
-      padding: 1.25rem;
-      font-size: 0.82rem;
-      color: var(--steel-300);
+      background: var(--navy); border-top: 1px solid var(--steel-700);
+      text-align: center; padding: 1.25rem;
+      font-size: 0.82rem; color: var(--steel-300);
     }
   </style>
 </head>
@@ -161,14 +115,14 @@
 
 <div class="page-hero">
   <h1>My Resume</h1>
-  <p>20+ years of progressive experience in analytics, operations leadership, and business intelligence.</p>
-  <!-- Replace # with your actual PDF link once uploaded -->
-  <a class="btn btn-primary" href="#">Download PDF ↓</a>
+  <p>20+ years of progressive experience in analytics, business intelligence, and operations leadership.</p>
+  <!-- Upload your PDF to the repo root and update the href -->
+  <a class="btn btn-primary" href="Luciano-Casillas-Resume.pdf" target="_blank">Download PDF ↓</a>
 </div>
 
 <div class="resume-body">
 
-  <!-- PROFESSIONAL EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <div class="res-section">
     <div class="res-section-title">Professional Experience</div>
 
@@ -178,10 +132,10 @@
         <div class="exp-role">Independent Analytics Consultant</div>
         <div class="exp-company">Self-Employed · Austin, TX <span>| Aug 2025 – Present</span></div>
         <ul>
-          <li>Designed a telecom churn prediction model in Python (XGBoost, SHAP) identifying at-risk customers before contract expiration and translating model outputs into business-readable churn drivers.</li>
+          <li>Designed a telecom churn prediction model in Python (XGBoost, SHAP) translating outputs into business-readable churn drivers actionable by non-technical stakeholders.</li>
           <li>Built a job intelligence and resume optimization system using multi-agent AI workflows — scraping postings, scoring fit via a five-factor engine, extracting ATS keywords, and generating archetype-matched resume drafts, reducing preparation time by ~80%.</li>
-          <li>Delivered a VBA-automated Excel performance tracking system for an 11-person operations team, replacing manual documentation with consistent daily reporting and monthly recaps.</li>
-          <li>Completed Maven Analytics coursework in Tableau Desktop certification preparation and AI-assisted analytics, applying frameworks directly to active portfolio projects.</li>
+          <li>Delivered a VBA-automated Excel performance tracking system for an 11-person operations team, replacing manual documentation with consistent daily reporting and monthly recaps without analyst intervention.</li>
+          <li>Completed Maven Analytics coursework in Tableau Desktop certification prep and AI-assisted analytics, applying frameworks directly to active portfolio projects.</li>
         </ul>
       </div>
     </div>
@@ -194,14 +148,13 @@
         <div class="exp-note">Began as contract via Apex Systems (Aug–Dec 2018); converted to direct hire Dec 2018.</div>
         <ul>
           <li>Developed and maintained 10+ Tableau dashboards tracking call center KPIs, contributing to a 15% improvement in operational efficiency across Sales, Retention, Mobile, and Repair.</li>
-          <li>Created custom SQL queries and integrated multiple data sources (Data Lake, Nexidia, MicroStrategy, Snowflake) to provide comprehensive views of sales and customer service trends.</li>
-          <li>Conducted EDA to refine chat and call center agent performance models, improving predictive accuracy by 20%.</li>
+          <li>Conducted EDA to refine agent performance models, improving predictive accuracy by 20%.</li>
           <li>Identified customer experience drivers through trend analysis, supporting process improvements that increased customer satisfaction scores by 10%.</li>
+          <li>Integrated multiple data sources (Data Lake, Nexidia, MicroStrategy, Snowflake) to provide comprehensive views of sales and service trends; reduced reporting cycle time by 30%.</li>
           <li>Applied Python with LLM techniques to analyze customer feedback, identifying early lifecycle dissatisfaction drivers and informing targeted billing process improvements.</li>
-          <li>Reduced reporting time by 30% through cross-source data integration and workflow optimization.</li>
-          <li>Maintained SQL and analytics project documentation in GitHub and SharePoint, with code reviewed by leadership prior to deployment.</li>
-          <li>Managed analytics project delivery using Agile/SCRUM, coordinating sprint planning and backlog prioritization across multiple business units.</li>
-          <li>Presented data-driven recommendations to Senior and Executive Leadership; owned end-to-end analytics projects from intake through delivery.</li>
+          <li>Maintained SQL queries and analytics documentation in GitHub with leadership code review, ensuring reproducibility and auditability of all reporting solutions.</li>
+          <li>Managed analytics delivery using Agile/SCRUM; presented data-driven recommendations to Senior and Executive Leadership across multiple business units.</li>
+          <li>Owned end-to-end analytics projects from intake through delivery — defining requirements, managing stakeholders, and driving solutions aligned to business objectives.</li>
         </ul>
       </div>
     </div>
@@ -212,8 +165,8 @@
         <div class="exp-role">Customer Advisor</div>
         <div class="exp-company">Alorica · Austin, TX <span>| Feb 2018 – Aug 2018</span></div>
         <ul>
-          <li>Managed customer cases end-to-end, resolving escalations and ensuring service satisfaction.</li>
-          <li>Analyzed dealer and customer data to identify workflow inefficiencies and support process improvements.</li>
+          <li>Managed customer cases end-to-end; analyzed dealer and customer data to identify workflow inefficiencies and support process improvements.</li>
+          <li>Partnered with field and corporate teams to coordinate solutions for high-profile cases, improving first-time resolution rates.</li>
         </ul>
       </div>
     </div>
@@ -224,10 +177,11 @@
         <div class="exp-role">Call Center Supervisor</div>
         <div class="exp-company">Centene Corporation (Cenpatico) · Austin, TX <span>| Jan 2013 – Aug 2017</span></div>
         <ul>
-          <li>Supervised 12–23 representatives administering government-contracted managed behavioral health plans across multiple states, each with distinct SLA requirements.</li>
-          <li>Applied behavioral-based coaching methodology — targeting specific behaviors driving metric outcomes — maintaining team quality scores consistently above 94%.</li>
-          <li>Built Excel-based coaching and performance tracking tools adopted as the standard across all call center supervisors, reducing administrative time company-wide.</li>
-          <li>Developed KPI and metrics reports for executive leadership to support staffing decisions, IVR routing configurations, and performance benchmark reviews.</li>
+          <li>Supervised 12–23 representatives administering government-contracted managed behavioral health plans across multiple states, meeting all SLA requirements.</li>
+          <li>Applied behavioral-based coaching methodology targeting specific behaviors driving metric outcomes — maintaining team quality scores consistently above 94%.</li>
+          <li>Built Excel-based coaching and performance tracking tools adopted as the standard across all call center supervisors company-wide, reducing administrative time and standardizing the process.</li>
+          <li>Developed KPI and metrics reports for executive leadership to inform staffing decisions, IVR routing configurations, and performance benchmark reviews.</li>
+          <li>Managed CRM task queues and Avaya call routing to maintain SLA compliance in a regulated healthcare payer environment.</li>
         </ul>
       </div>
     </div>
@@ -235,11 +189,11 @@
     <div class="exp-item">
       <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
       <div class="exp-content">
-        <div class="exp-role">Customer Service Representative <span style="font-weight:400;font-size:0.88rem;">(Temp Placement)</span></div>
+        <div class="exp-role">Customer Service Representative <span style="font-weight:400;font-size:0.87rem;">(Temp Placement)</span></div>
         <div class="exp-company">Healthcare Support Staffing → Centene Corporation (Cenpatico) · Austin, TX <span>| Oct 2011 – Jan 2013</span></div>
         <ul>
-          <li>Resolved routine and complex inquiries for members and providers in a regulated healthcare payer environment.</li>
-          <li>Documented member and provider information in CRM applications for quality assurance and performance tracking.</li>
+          <li>Resolved routine and complex member and provider inquiries in a regulated healthcare payer environment via phone, live chat, and email.</li>
+          <li>Documented information in CRM applications for quality assurance and performance tracking.</li>
         </ul>
       </div>
     </div>
@@ -250,7 +204,8 @@
         <div class="exp-role">Customer Service Representative</div>
         <div class="exp-company">Progressive Insurance · Austin, TX <span>| Nov 2008 – Jun 2011</span></div>
         <ul>
-          <li>Handled inbound calls on renewals, coverage, billing, eligibility, and policy changes, meeting quality and performance goals consistently.</li>
+          <li>Handled inbound calls on renewals, coverage, billing, eligibility, and policy changes in a fast-paced environment, meeting quality and performance goals consistently.</li>
+          <li>Educated customers on insurance products and services, supporting retention and growth strategies.</li>
         </ul>
       </div>
     </div>
@@ -261,7 +216,7 @@
         <div class="exp-role">Technical Team Supervisor</div>
         <div class="exp-company">DIRECTV · Tulsa, OK <span>| Oct 2004 – Sep 2008</span></div>
         <ul>
-          <li>Led 12–18 agents handling billing and technical support; applied behavioral-based coaching and Excel-based tracking dashboards, holding team quality scores above 94%.</li>
+          <li>Led 12–18 agents handling billing and technical support calls; applied behavioral-based coaching with individual Excel-based tracking dashboards, holding team quality scores above 94% without sacrificing handle time or schedule adherence.</li>
         </ul>
       </div>
     </div>
@@ -272,24 +227,27 @@
         <div class="exp-role">Progressive Roles: Bilingual CSR → National Spanish Call Center Supervisor</div>
         <div class="exp-company">US Cellular · Tulsa, OK <span>| Jul 1999 – Aug 2004</span></div>
         <ul>
-          <li>Promoted from bilingual agent to supervisor within one year; ultimately held four progressive roles over five years, supervising 18–32 representatives.</li>
-          <li>As interim Retention Manager, diagnosed a structural incentive problem and redesigned the metric from a flat monthly goal to a percentage save rate — driving churn performance from the low 60s to 84–87% within two quarters, earning the department its first quarterly churn bonus.</li>
-          <li>Built the data-backed business case for a dedicated National Spanish Call Center; received executive approval and launched with 64 agents across four teams, all four finishing in the top 10 nationally.</li>
+          <li>Promoted from bilingual agent to supervisor within one year; held four progressive roles over five years, supervising 18–32 representatives across general and bilingual customer service departments.</li>
+          <li>As interim Retention Manager, redesigned the retention metric from a flat monthly goal to a percentage save rate — driving churn performance from the low 60s to 84–87% within two quarters and earning the department its first quarterly churn bonus.</li>
+          <li>Used split-testing to determine optimal offer order for retention conversations, increasing consistency and attachment rates across the team.</li>
+          <li>Built the data-backed business case for a dedicated National Spanish Call Center; received executive approval and launched with 64 agents across four teams — all four finished in the top 10 nationally, regularly placing in the top 5.</li>
+          <li>Designed and delivered training programs to close skill gaps; standardized Excel-based coaching documentation that later served as the model for KPI reporting tools at Centene and Charter.</li>
         </ul>
       </div>
     </div>
-  </div>
+
+  </div><!-- /experience -->
 
   <!-- TECHNICAL SKILLS -->
   <div class="res-section">
     <div class="res-section-title">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-group">
-        <h4>Data & Querying</h4>
+        <h4>Data &amp; Querying</h4>
         <p>SQL · MySQL · Snowflake · Hadoop · Data Lake · Multi-Source Integration</p>
       </div>
       <div class="skill-group">
-        <h4>Visualization & BI</h4>
+        <h4>Visualization &amp; BI</h4>
         <p>Tableau · Power BI · MicroStrategy · Excel (Advanced) · PowerPoint</p>
       </div>
       <div class="skill-group">
@@ -297,15 +255,15 @@
         <p>EDA · KPI Development · Trend Analysis · Data Modeling · Forecasting · Root Cause Analysis</p>
       </div>
       <div class="skill-group">
-        <h4>Tools & Platforms</h4>
+        <h4>Tools &amp; Platforms</h4>
         <p>JIRA · GitHub · Nexidia · Avaya · SharePoint · CRM Systems · Microsoft Access</p>
       </div>
       <div class="skill-group">
         <h4>Programming</h4>
-        <p>Python (data analysis, LLM-based text analysis, ML modeling)</p>
+        <p>Python (data analysis, LLM-based text analysis, ML modeling with XGBoost &amp; SHAP)</p>
       </div>
       <div class="skill-group">
-        <h4>Process & Leadership</h4>
+        <h4>Process &amp; Leadership</h4>
         <p>Agile / SCRUM · Stakeholder Engagement · Cross-Functional Collaboration · Process Improvement</p>
       </div>
     </div>
@@ -315,7 +273,7 @@
   <div class="res-section">
     <div class="res-section-title">Education</div>
     <div class="edu-item">
-      <div class="edu-degree">Bachelor of Science in Data Science <span style="font-weight:400;font-size:0.88rem;">(In Progress)</span></div>
+      <div class="edu-degree">Bachelor of Science in Data Science <span style="font-weight:400;font-size:0.87rem;">(In Progress)</span></div>
       <div class="edu-school">Western Governors University</div>
     </div>
     <div class="edu-item">
@@ -326,21 +284,19 @@
 
   <!-- CERTIFICATIONS -->
   <div class="res-section">
-    <div class="res-section-title">Certifications & Professional Development</div>
+    <div class="res-section-title">Certifications &amp; Professional Development</div>
     <div class="cert-item">
       <div>
         <div class="cert-name">Data Science with SQL and Tableau</div>
         <div class="cert-org">eCornell University · 2024</div>
       </div>
     </div>
-    <!-- Add more cert-item blocks here as you earn them -->
+    <!-- Add additional cert-item blocks here as you earn more certifications -->
   </div>
 
 </div><!-- /resume-body -->
 
-<footer>
-  &copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX
-</footer>
+<footer>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</footer>
 
 </body>
 </html>

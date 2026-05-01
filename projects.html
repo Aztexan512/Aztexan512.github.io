@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Luciano Casillas Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0A3360;
+      --steel-700: #405E7C;
+      --blue-700:  #0077B3;
+      --blue-500:  #4EBEE5;
+      --steel-300: #D1E2E5;
+      --steel-100: #F4F9FA;
+      --white:     #FFFFFF;
+      --black:     #2D2D2D;
+      --gray-700:  #707070;
+      --green-700: #08CAA9;
+      --green-900: #067462;
+      --orange:    #FF8A39;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
+
+    nav {
+      background: var(--navy); padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .nav-brand { color: var(--white); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--steel-300); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-500); }
+
+    .page-hero {
+      background: var(--navy); color: var(--white);
+      text-align: center; padding: 3.5rem 2rem 3rem;
+    }
+    .page-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--steel-300); font-size: 0.97rem; }
+
+    main { max-width: 1060px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background: var(--steel-100);
+      border: 1px solid var(--steel-300);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .project-card:hover { box-shadow: 0 8px 28px rgba(0,119,179,0.13); transform: translateY(-4px); }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.71rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.2rem 0.65rem; border-radius: 20px; margin-bottom: 0.9rem;
+    }
+    .tag-retention  { background: rgba(8,202,169,0.12); color: var(--green-700); }
+    .tag-voc        { background: rgba(0,119,179,0.1);  color: var(--blue-700); }
+    .tag-crosssell  { background: rgba(255,138,57,0.12); color: var(--orange); }
+
+    .project-card h2 {
+      font-size: 1.08rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.6rem; line-height: 1.35;
+    }
+    .project-card p {
+      font-size: 0.9rem; color: var(--black);
+      line-height: 1.6; flex: 1; margin-bottom: 1.25rem;
+    }
+
+    .project-stats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .stat-pill {
+      font-size: 0.77rem; font-weight: 600;
+      color: var(--steel-700);
+      background: var(--white);
+      border: 1px solid var(--steel-300);
+      border-radius: 4px; padding: 0.2rem 0.55rem;
+    }
+
+    .project-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
+    .btn {
+      display: inline-block; padding: 0.55rem 1.15rem;
+      border-radius: 6px; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-primary { background: var(--blue-700); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--blue-700); border: 2px solid var(--blue-700); }
+
+    footer {
+      background: var(--navy); border-top: 1px solid var(--steel-700);
+      text-align: center; padding: 1.25rem;
+      font-size: 0.82rem; color: var(--steel-300);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">Luciano Casillas Jr.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <h1>Project Case Studies</h1>
+  <p>End-to-end analytics work in churn prediction, customer satisfaction, and revenue expansion.</p>
+</div>
+
+<main>
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <span class="project-tag tag-retention">Churn &amp; Retention</span>
+      <h2>Telecom Customer Churn — Cross-Industry Retention Playbook</h2>
+      <p>End-to-end churn prediction system built on a 225,000-row synthetic dataset. XGBoost model (AUC 0.84) with full SHAP explainability identifies the top behavioral drivers of churn. Includes a $32.45M CLTV-at-risk simulation and a live Streamlit dashboard for interactive exploration. Framework translates directly to auto insurance non-renewal prediction.</p>
+      <div class="project-stats">
+        <span class="stat-pill">AUC 0.84</span>
+        <span class="stat-pill">Top-decile lift 1.84×</span>
+        <span class="stat-pill">$32.45M CLTV at risk</span>
+        <span class="stat-pill">225K rows</span>
+      </div>
+      <div class="project-actions">
+        <a class="btn btn-primary" href="https://github.com/Aztexan512/Telco-Churn-Retention-Playbook" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <span class="project-tag tag-voc">VOC Analytics</span>
+      <h2>NovaStar Telecom — VOC Survey Analysis</h2>
+      <p>Full VOC analytics workflow on 120,000 synthetic post-interaction survey responses. A Gradient Boosting Detractor risk model (AUC 0.81) identifies which dissatisfied customers to prioritize for recovery outreach. Driver analysis surfaces resolution ease, wait time, and first-contact resolution as the top NPS predictors. Includes a live Streamlit revenue impact simulator.</p>
+      <div class="project-stats">
+        <span class="stat-pill">AUC 0.81</span>
+        <span class="stat-pill">Top-decile lift 1.82×</span>
+        <span class="stat-pill">120K survey responses</span>
+        <span class="stat-pill">40.6% Detractor rate</span>
+      </div>
+      <div class="project-actions">
+        <a class="btn btn-primary" href="https://github.com/Aztexan512/Customer-Satisfaction-Driver-Analysis" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <span class="project-tag tag-crosssell">Revenue Expansion</span>
+      <h2>MPHH Cross-Sell Propensity &amp; Revenue Expansion</h2>
+      <p>Identifies which single-product AutoShield Insurance households are most likely to add a second product within 12 months. Gradient Boosting model (AUC 0.69) on 150,000 synthetic households across a 3-year window. Property quote abandonment and proactive outreach frequency are the two strongest behavioral signals. Top two deciles capture 36% of all conversions. Projected unconverted CLTV opportunity exceeds $280M.</p>
+      <div class="project-stats">
+        <span class="stat-pill">AUC 0.69</span>
+        <span class="stat-pill">Top-2 decile: 36% of conversions</span>
+        <span class="stat-pill">$280M+ CLTV opportunity</span>
+        <span class="stat-pill">150K households</span>
+      </div>
+      <div class="project-actions">
+        <a class="btn btn-primary" href="https://github.com/Aztexan512/Multiproduct-Household-Propensity-Model" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>&copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX</footer>
+
+</body>
+</html>

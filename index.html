@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luciano Casillas Jr. — Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0A3360;
+      --steel-700: #405E7C;
+      --blue-700:  #0077B3;
+      --blue-500:  #4EBEE5;
+      --steel-300: #D1E2E5;
+      --steel-100: #F4F9FA;
+      --white:     #FFFFFF;
+      --black:     #2D2D2D;
+      --gray-700:  #707070;
+      --gray-300:  #CCCCCC;
+      --green-700: #08CAA9;
+      --orange:    #FF8A39;
+      --red:       #E05252;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .nav-brand {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--steel-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-500); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-name {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-title {
+      font-size: 1.15rem;
+      color: var(--blue-500);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .hero-location {
+      font-size: 0.95rem;
+      color: var(--steel-300);
+      margin-bottom: 2rem;
+    }
+    .hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary { background: var(--blue-700); color: var(--white); }
+    .btn-outline {
+      background: transparent;
+      color: var(--blue-500);
+      border: 2px solid var(--blue-500);
+    }
+
+    /* SECTION COMMON */
+    section { padding: 4rem 2rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--blue-700);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gray-700);
+      margin-bottom: 2.5rem;
+    }
+    .divider {
+      height: 3px;
+      width: 48px;
+      background: var(--blue-500);
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ACCOMPLISHMENTS */
+    .accl-section { background: var(--steel-100); }
+    .accl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .accl-card {
+      background: var(--white);
+      border: 1px solid var(--steel-300);
+      border-top: 4px solid var(--blue-700);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .accl-stat {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue-700);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .accl-desc {
+      font-size: 0.9rem;
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    /* SNAPSHOT CARDS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .snap-card {
+      background: var(--steel-100);
+      border: 1px solid var(--steel-300);
+      border-radius: 10px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .snap-card:hover { box-shadow: 0 6px 24px rgba(0,119,179,0.12); transform: translateY(-3px); }
+    .snap-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .snap-card p {
+      font-size: 0.92rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+    .snap-card a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue-700);
+      text-decoration: none;
+    }
+    .snap-card a:hover { color: var(--blue-500); }
+
+    /* CONTACT STRIP */
+    .contact-strip {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .contact-strip h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-strip p { color: var(--steel-300); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--steel-700);
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--steel-300);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">Luciano Casillas Jr.</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="mailto:luciano.casillasjr@outlook.com">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-name">Luciano Casillas Jr.</p>
+  <p class="hero-title">Senior Data Analyst &nbsp;·&nbsp; Business Intelligence &nbsp;·&nbsp; Operations Analytics</p>
+  <p class="hero-location">Austin, TX &nbsp;|&nbsp; Open to Remote</p>
+  <div class="hero-cta-group">
+    <a class="btn btn-primary" href="projects.html">View My Projects</a>
+    <a class="btn btn-outline" href="resume.html">See My Resume</a>
+  </div>
+</section>
+
+<!-- KEY ACCOMPLISHMENTS -->
+<section class="accl-section">
+  <div class="container">
+    <p class="section-label">Impact at a Glance</p>
+    <h2 class="section-title">Key Accomplishments</h2>
+    <div class="divider"></div>
+    <div class="accl-grid">
+      <div class="accl-card">
+        <div class="accl-stat">+20%</div>
+        <div class="accl-desc">Improved agent performance model predictive accuracy through EDA on call center interaction data.</div>
+      </div>
+      <div class="accl-card">
+        <div class="accl-stat">10+</div>
+        <div class="accl-desc">Tableau dashboards built and maintained tracking call center KPIs across Sales, Retention, Mobile, and Repair.</div>
+      </div>
+      <div class="accl-card">
+        <div class="accl-stat">−30%</div>
+        <div class="accl-desc">Reduced reporting cycle time by integrating data across SQL, Snowflake, Data Lake, Nexidia, and MicroStrategy.</div>
+      </div>
+      <div class="accl-card">
+        <div class="accl-stat">+10%</div>
+        <div class="accl-desc">Increased customer satisfaction scores by identifying experience drivers through trend analysis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section>
+  <div class="container">
+    <p class="section-label">Explore</p>
+    <h2 class="section-title">What's Here</h2>
+    <div class="divider"></div>
+    <div class="cards-grid">
+      <div class="snap-card">
+        <h3>My Resume</h3>
+        <p>20+ years of progressive experience across analytics, operations, and leadership — including 7 years as a Data Insights Analyst at Charter Communications.</p>
+        <a href="resume.html">View full resume →</a>
+      </div>
+      <div class="snap-card">
+        <h3>Portfolio Projects</h3>
+        <p>End-to-end analytics projects spanning churn prediction, VOC analysis, and cross-sell propensity modeling — each with business-ready financial impact quantification.</p>
+        <a href="projects.html">See all projects →</a>
+      </div>
+      <div class="snap-card">
+        <h3>Technical Skills</h3>
+        <p>SQL, Tableau, Snowflake, Python, Power BI, and more — organized by domain so you can quickly find what's relevant to your team.</p>
+        <a href="skills.html">See full skillset →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <h2>Let's Connect</h2>
+  <p>Open to senior analyst, BI, and operations analytics roles — remote preferred.</p>
+  <div class="contact-links">
+    <a class="btn btn-primary" href="mailto:luciano.casillasjr@outlook.com">luciano.casillasjr@outlook.com</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/luciano-casillas/" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Luciano Casillas Jr. &nbsp;·&nbsp; Austin, TX
+</footer>
+
+</body>
+</html>

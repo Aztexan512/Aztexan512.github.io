@@ -334,3 +334,6 @@
        flex-wrap: wrap;
        gap: 0.5rem;
  }
+/* Align bottom sections across all project cards */
+.metrics-divider { margin-top: auto; }
+.badges-row { flex-direction: column; }
